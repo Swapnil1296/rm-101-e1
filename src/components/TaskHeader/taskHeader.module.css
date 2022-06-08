@@ -1,3 +1,10 @@
 .taskHeader {
   /* Sample */
+  text-align: center;
+  background-color: #72e8a5;
+  color: white;
+}
+.taskHeader span {
+  color: black;
+ margin: 5px;
 }

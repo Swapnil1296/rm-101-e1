@@ -20,8 +20,12 @@ const TaskHeader = ({getTask}) => {
   return (
     <div data-testid="task-header" className={styles.taskHeader}>
       <h1>TODO LIST</h1>
-      <b data-testid="header-remaining-task">You have{unCompletedTask}</b>
-      <b data-testid="header-total-task">of {totalTask} task remaining</b>
+      <b data-testid="header-remaining-task">
+        You have <span>{unCompletedTask}</span>
+      </b>
+      <b data-testid="header-total-task">
+         of <span>{totalTask}</span> task remaining
+      </b>
     </div>
   );
 };

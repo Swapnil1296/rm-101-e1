@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import AddTask from './AddTask/AddTask';
-import Task from './Task/Task';
+
 
 import styles from './taskApp.module.css';
 
 import {TaskHeader} from './TaskHeader';
+import Tasks from './Tasks/Tasks';
 
 const TaskApp = ({task}) => {
   // console.log(task);
@@ -21,7 +22,7 @@ const TaskApp = ({task}) => {
       {/* Add Task */}
       <AddTask updateTask={setData} getTask={data} />
       {/* Tasks */}
-      <Task updateTask={setData} getTask={data} />
+      <Tasks updateTask={setData} getTask={data} />
     </div>
   );
 };
