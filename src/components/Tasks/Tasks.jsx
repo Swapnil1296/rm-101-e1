@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./tasks.module.css";
 
-const Tasks = () => {
+const Tasks = ({ getTask }) => {
+
+  console.log("getTask:", getTask);
   // NOTE: do not delete `data-testid` key value pair
   return (
     <>
