@@ -1,9 +1,9 @@
-import React from "react";
-import styles from "./tasks.module.css";
+import React from 'react';
+import styles from './tasks.module.css';
+import {Task} from './index';
 
-const Tasks = ({ getTask }) => {
-
-  console.log("getTask:", getTask);
+const Tasks = ({getTask, updateTask}) => {
+  // console.log('getTask:', getTask);
   // NOTE: do not delete `data-testid` key value pair
   return (
     <>

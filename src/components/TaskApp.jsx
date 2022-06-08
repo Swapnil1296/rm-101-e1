@@ -11,17 +11,17 @@ const TaskApp = ({task}) => {
 
   // NOTE: do not delete `data-testid` key value pair
   const [data, setData] = useState(task);
-  console.log('data is:', data);
+  // console.log('data is:', data);
 
   return (
     <div data-testid="task-app" className={styles.taskApp}>
       {/* Header */}
 
-      <TaskHeader />
+      <TaskHeader getTask={data} />
       {/* Add Task */}
       <AddTask updateTask={setData} getTask={data} />
       {/* Tasks */}
-      <Task updateTask={setData} getTask={data}  />
+      <Task updateTask={setData} getTask={data} />
     </div>
   );
 };
