@@ -6,18 +6,18 @@ const Task = ({taskItems, sendTasks, updateTask}) => {
   // NOTE: do not delete `data-testid` key value pair
   const handleChandge = () => {
      console.log("HI")
-    for (var i = 0; i < sendTasks.length; i++) {
+    for (let i in sendTasks) {
       if (sendTasks[i].id === taskItems.id) {
         let output = [...sendTasks];
         output.splice(i, 1);
-
+       console.log(output)
         return updateTask(output);
       }
     }
   };
   const handleValueDone = () => {
     let ans = [...sendTasks];
-    for (let i = 0; i < ans.length; i++) {
+    for (let i in ans) {
       if (ans[i].id === taskItems.id) {
         ans[i].done = !ans[i].done;
 

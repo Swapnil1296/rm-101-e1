@@ -7,7 +7,7 @@ const Counter = ({taskItems, sendTasks, updateTask}) => {
   // let count = 0;
 
   const handleChange = (value) => {
-    for (var i = 0; i < sendTasks.length; i++) {
+    for (let i in sendTasks) {
       if (sendTasks[i].id === taskItems.id) {
         if (sendTasks[i].count > 0) {
           let result = [...sendTasks];
