@@ -1,3 +1,14 @@
 .task {
   /* Sample  */
+  width: 50%;
+  display:flex;
+  margin: auto;
+  justify-content: space-evenly;
+  margin: 5px;
 }
+/* .container_one{
+ 
+          text-decoration: line-through;
+          text-align: center;
+          width: 100pa;
+} */
