@@ -30,6 +30,7 @@ const Task = ({taskItems, sendTasks, updateTask}) => {
       <input type="checkbox" data-testid="task-checkbox" />
       <div data-testid="task-text"></div>
       {/* Counter here */}
+      {taskItems.done ? (
         <input
           onChange={() => handleValueDone()}
           type="checkbox"
@@ -45,11 +46,12 @@ const Task = ({taskItems, sendTasks, updateTask}) => {
       )}
       {taskItems.done ? (
         <div
-          className='container_one'
+          key={taskItems.slug}
+          className="container_one"
           style={{
             textDecoration: 'line-through',
+            width: '80px',
             textAlign: 'center',
-            width: '111px',
           }}
           data-testid="task-text"
         >
@@ -57,13 +59,17 @@ const Task = ({taskItems, sendTasks, updateTask}) => {
         </div>
       ) : (
         <div
-          style={{textAlign: 'center', width: '80px'}}
+          style={{width: '80px', textAlign: 'center'}}
           data-testid="task-text"
         >
           {taskItems.text}
         </div>
       )}
-      <Counter />
+      <Counter
+        sendTasks={sendTasks}
+        updateTask={updateTask}
+        taskItems={taskItems}
+      />
       <button data-testid="task-remove-button" onClick={() => handleChandge()}>
         🗑️
       </button>

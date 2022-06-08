@@ -1,3 +1,9 @@
 .counter {
   /* TODO */
+  display: flex;
+  justify-content: space-evenly;
+}
+.counter span{
+  border: 1px solid black;
+  width: 30px;
 }

@@ -5,10 +5,10 @@ const AddTask = ({getTask, updateTask}) => {
   // console.log('getTask', getTask);
   // NOTE: do not delete `data-testid` key value pair
   const [data, setData] = useState({
-    id: null,
     text: '',
     done: true,
     count: 1,
+    id: null,
   });
   console.log('data', data);
   const handleChange = (value) => {
