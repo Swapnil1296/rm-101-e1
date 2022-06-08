@@ -11,7 +11,7 @@ const AddTask = ({getTask, updateTask}) => {
     id: null,
   });
   console.log('data', data);
-  const handleChange = (value) => {
+  const handleChange = ({value}) => {
     setData({
       ...data,
       data: value,

@@ -5,9 +5,9 @@ const Task = ({taskItems, sendTasks, updateTask}) => {
   // console.log('task:', sendTasks);
   // NOTE: do not delete `data-testid` key value pair
   const handleChandge = () => {
-    //  console.log("HI")
+     console.log("HI")
     for (var i = 0; i < sendTasks.length; i++) {
-      if (sendTasks[i].id === sendTasks.id) {
+      if (sendTasks[i].id === taskItems.id) {
         let output = [...sendTasks];
         output.splice(i, 1);
 
@@ -17,7 +17,7 @@ const Task = ({taskItems, sendTasks, updateTask}) => {
   };
   const handleValueDone = () => {
     let ans = [...sendTasks];
-    for (var i = 0; i < ans.length; i++) {
+    for (let i = 0; i < ans.length; i++) {
       if (ans[i].id === taskItems.id) {
         ans[i].done = !ans[i].done;
 
@@ -27,10 +27,7 @@ const Task = ({taskItems, sendTasks, updateTask}) => {
   };
   return (
     <li data-testid="task" className={styles.task}>
-      <input type="checkbox" data-testid="task-checkbox" />
-      <div data-testid="task-text"></div>
-      {/* Counter here */}
-      {taskItems.done ? (
+      {taskItems.done === true ? (
         <input
           onChange={() => handleValueDone()}
           type="checkbox"
@@ -44,27 +41,26 @@ const Task = ({taskItems, sendTasks, updateTask}) => {
           data-testid="task-checkbox"
         />
       )}
-      {taskItems.done ? (
+      {taskItems.done === true ? (
         <div
-          key={taskItems.slug}
-          className="container_one"
+          data-testid="task-text"
           style={{
             textDecoration: 'line-through',
-            width: '80px',
             textAlign: 'center',
+            width: '80px',
           }}
-          data-testid="task-text"
         >
           {taskItems.text}
         </div>
       ) : (
         <div
-          style={{width: '80px', textAlign: 'center'}}
           data-testid="task-text"
+          style={{textAlign: 'center', width: '80px'}}
         >
           {taskItems.text}
         </div>
       )}
+      {/* Counter here */}
       <Counter
         sendTasks={sendTasks}
         updateTask={updateTask}
